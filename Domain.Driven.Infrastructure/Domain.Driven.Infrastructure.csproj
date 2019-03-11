@@ -8,4 +8,10 @@
     <ProjectReference Include="..\Domain.Driven.Domain\Domain.Driven.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Dapper.Extend">
+      <HintPath>Lib\Dapper.Extend.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

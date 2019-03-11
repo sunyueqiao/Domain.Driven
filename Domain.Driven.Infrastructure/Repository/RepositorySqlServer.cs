@@ -1,4 +1,5 @@
-﻿using Domain.Driven.Domain;
+﻿using Dapper.Extend;
+using Domain.Driven.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,22 +11,21 @@ namespace Domain.Driven.Infrastructure.Repository
     {
     }
 
-    public class RepositorySqlServer<TPrimary, TEntity> : IRepository<TPrimary, TEntity>
-        where TPrimary : struct where TEntity : class
+    public class RepositorySqlServer<TPrimary, TEntity> : SqlServerDal<TPrimary, TEntity>,
+        IRepository<TPrimary, TEntity>
+        where TPrimary : struct
+        where TEntity : class
     {
-        public TEntity GetByPrimary(TPrimary primary)
+        private static string ConnectionString
         {
-            throw new NotImplementedException();
+            get
+            {
+                return string.Empty;
+            }
         }
 
-        public TPrimary Insert(TEntity entity)
+        public RepositorySqlServer() : base(ConnectionString)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Update(TEntity entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

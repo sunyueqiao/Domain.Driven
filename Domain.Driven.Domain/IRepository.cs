@@ -13,8 +13,7 @@ namespace Domain.Driven.Domain
     {
         TPrimary Insert(TEntity entity);
 
-        TEntity GetByPrimary(TPrimary primary);
+        int Update(TEntity entity);
 
-        void Update(TEntity entity);
     }
 }

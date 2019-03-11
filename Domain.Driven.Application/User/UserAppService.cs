@@ -19,8 +19,7 @@ namespace Domain.Driven.Application.User
 
         public UserInfo GetUserById(long userId)
         {
-            UserInfo userInfo = this._userRepository.GetByPrimary(userId);
-            userInfo.UserContacts.AddRange(this.GetContacts(userId));
+            UserInfo userInfo = new UserInfo();
             return userInfo;
         }
 
